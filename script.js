@@ -12,5 +12,8 @@ function makeRequest(url, method, formdata, callback){
 }
 
 function getAllStudents (){
+    var requestDataToPhp = new FormData()
+    requestDataToPhp.append("collectionType", "students")
 
+    makeRequest("requestHandler.php", "POST", "requestDataToPhp", (response) => { console.log(response)})
 }
